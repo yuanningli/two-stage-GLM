@@ -1,1 +1,4 @@
+sample data set for demo
 
+data.mat contains sample stP, stBHA, and phase data from one electrode
+time_window.mat contains information about the pre-stim and post-stim time window

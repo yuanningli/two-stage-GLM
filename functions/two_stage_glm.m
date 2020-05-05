@@ -1,6 +1,8 @@
 function [pred_post, pred_pre, W_post, W_pre, load_post, load_pre, MI] ...
     = two_stage_glm(train_data, train_tags, test_data, feat_index, groups)
 % Fitting the two-stage GLM model
+% R package grpreg is used for solving the group lasso problem
+%
 % Inputs:
 %  train_data - N x P training data matrix
 %  train_tags - N dimensional vector for training data labels
@@ -58,7 +60,7 @@ pred_post = double(pred_prob_post >= 0.5);
 % include pre-stim features
 X_pre = [offset_post_train, train_data_n(:,idx_pre)];
 X_pre_test = [offset_post_test, test_data_n(:,idx_pre)];
-groupid_pre = [0; (groups)'];
+groupid_pre = [1; (groups+1)'];
 
 % STEP2: evaluate beta weights for pre features
 csvwrite('./functions/sglX.dat',X_pre);

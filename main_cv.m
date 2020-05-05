@@ -33,10 +33,10 @@ N = length(all_data_tags);
 num_cv = 5;
 cv = cvpartition(N, 'k', num_cv);
 
-dprime_post = zeros(num_cv);
-dprime_pre = zeros(num_cv);
+dprime_post = zeros(num_cv,1);
+dprime_pre = zeros(num_cv,1);
 
-all_MI = zeros(N);
+all_MI = zeros(N,1);
 
 for i = 1 : num_cv
     train_idx = cv.training(i);
