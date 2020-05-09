@@ -3,4 +3,4 @@ Demo code and sample data for manuscript "Endogenous activity modulates stimulus
 
 Written in MATLAB and R (tested on MacOS 10.14.6, MATLAB R2018b, R 3.5.2). Required R package: grpreg
 
-To run the code: run main_cv.m
+To run the code: matlab main_cv.m
